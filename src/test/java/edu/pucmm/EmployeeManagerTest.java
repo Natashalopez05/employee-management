@@ -7,7 +7,6 @@ import edu.pucmm.exception.InvalidSalaryException;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
-import static com.sun.org.apache.xalan.internal.xsltc.compiler.util.Util.println;
 import static org.junit.jupiter.api.Assertions.*;
 
 /**
