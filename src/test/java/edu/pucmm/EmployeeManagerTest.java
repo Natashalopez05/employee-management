@@ -144,10 +144,16 @@ public class EmployeeManagerTest {
     @Test
     public void testIsSalaryValidForPosition() {
         // TODO: Verificar la lógica de validación de salario para diferentes posiciones.
+         // - El salario es negativo.
+        assertFalse(employeeManager.isSalaryValidForPosition(juniorDeveloper, -1000), "El salario negativo no es válido para juniorDeveloper");
+        // - El Position es null.
+        assertFalse(employeeManager.isSalaryValidForPosition(null, 40000), "El salario no es válido para una posición nula");
         // - Verificar que un salario de 40000 es válido para juniorDeveloper.
         assertTrue(employeeManager.isSalaryValidForPosition(juniorDeveloper, 40000), "El salario de 40000 es válido para juniorDeveloper");
         // - Verificar que un salario de 60000 no es válido para juniorDeveloper.
         assertFalse(employeeManager.isSalaryValidForPosition(juniorDeveloper, 60000), "El salario de 60000 no es válido para juniorDeveloper");
+        // - El salario es negativo.
+        assertFalse(employeeManager.isSalaryValidForPosition(seniorDeveloper, -1000), "El salario negativo no es válido para seniorDeveloper");
         // - Verificar que un salario de 70000 es válido para seniorDeveloper.
         assertTrue(employeeManager.isSalaryValidForPosition(seniorDeveloper, 70000), "El salario de 70000 es válido para seniorDeveloper");
         // - Verificar que un salario de 50000 no es válido para seniorDeveloper.
